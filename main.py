@@ -8,6 +8,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
 from auth import authenticate
 from const import ACCESS_DENIED_MSG
 from albums import get_albums, get_photos_in_album
+from units import get_disk_partitions
 
 def main():
     os.system('clear')
@@ -34,18 +35,44 @@ def main():
     print("Albums finded:")
     print("Select number of album to delete:")
     for i, album in enumerate(albums):
-        print(f"{i}) {album['title']}")
+        print(f"{i+1}) {album['title']}")
     
     album_index = -1
     while album_index < 0 or album_index >= len(albums):
         album_index = int(input("Enter the number of the album to delete: "))
     
-    list_photos = get_photos_in_album(service, albums[album_index]['id'])
+    list_photos = get_photos_in_album(service, albums[album_index-1]['id'])
     if not list_photos:
         print('No photos found.')
         return
 
     print("Number of photos found in the album:", len(list_photos))
+
+    internal_disks, external_disks = get_disk_partitions()
+
+    print("Internal Disks:")
+    for disk in internal_disks:
+        print(f"Device: {disk['device']}, Mountpoint: {disk['mountpoint']}, Total: {disk['total']}, Used: {disk['used']}, Free: {disk['free']}, Percent: {disk['percent']}%")
+
+    print("\nExternal Disks:")
+    for disk in external_disks:
+        print(f"Device: {disk['device']}, Mountpoint: {disk['mountpoint']}, Total: {disk['total']}, Used: {disk['used']}, Free: {disk['free']}, Percent: {disk['percent']}%")
+
+    print("Do you whant internal or external disk?")
+    disk_type = ""
+    while disk_type not in ['internal', 'external']:
+        disk_type = input("Enter 'internal' or 'external': ")
+    
+    if disk_type == 'internal':
+        print("Internal disk selected.")
+    else:
+        print("External disk selected.")
+        print("Select the external disk number:")
+        for i, disk in enumerate(external_disks):
+            print(f"{i+1}) {disk['mountpoint']}")
+        external_disk_index = -1
+        while external_disk_index < 0 or external_disk_index >= len(external_disks) + 1:
+            external_disk_index = int(input("Enter the number of the external disk: "))
 
 if __name__ == '__main__':
     main()
