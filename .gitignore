@@ -17,3 +17,6 @@ credentials.json
 
 # Virtual Environment
 venv/
+
+# User Tokens
+tokens/
