@@ -80,7 +80,7 @@ def main():
     
     download_album(
         service, 
-        albums[album_index-1]['id'],
+        list_photos,
         albums[album_index-1]['title'], 
         disk_mount_point,
         user_email)
