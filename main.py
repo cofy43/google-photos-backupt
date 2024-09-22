@@ -49,7 +49,7 @@ def main():
     albumns_headers = ["Id", "Name", "Items"]
     albums_photos = [[x, get_photos_in_album(service, x['id'])] for x in tqdm(albums, desc="Procesando álbumes")]
     print("Albums finded:")
-    albums_data = [[i, x[0]['title'], len(x[1])] for i, x in enumerate(albums_photos)]
+    albums_data = [[i+1, x[0]['title'], len(x[1])] for i, x in enumerate(albums_photos)]
     print(tabulate(albums_data, headers=albumns_headers, tablefmt="grid"))
 
     album_index = get_user_input("Enter the number of the album to export: ", list(range(1, len(albums))))
