@@ -9,6 +9,7 @@ from auth import authenticate
 from const import ACCESS_DENIED_MSG
 from albums import get_albums, get_photos_in_album
 from units import get_disk_partitions
+from export import download_album
 
 def main():
     os.system('clear')
@@ -33,13 +34,13 @@ def main():
         return
 
     print("Albums finded:")
-    print("Select number of album to delete:")
+    print("Select number of album to export:")
     for i, album in enumerate(albums):
         print(f"{i+1}) {album['title']}")
     
     album_index = -1
     while album_index < 0 or album_index >= len(albums):
-        album_index = int(input("Enter the number of the album to delete: "))
+        album_index = int(input("Enter the number of the album to export: "))
     
     list_photos = get_photos_in_album(service, albums[album_index-1]['id'])
     if not list_photos:
@@ -63,6 +64,8 @@ def main():
     while disk_type not in ['internal', 'external']:
         disk_type = input("Enter 'internal' or 'external': ")
     
+    disk_mount_point = os.path.expanduser("~/Documents")
+
     if disk_type == 'internal':
         print("Internal disk selected.")
     else:
@@ -73,6 +76,14 @@ def main():
         external_disk_index = -1
         while external_disk_index < 0 or external_disk_index >= len(external_disks) + 1:
             external_disk_index = int(input("Enter the number of the external disk: "))
+        disk_mount_point = external_disks[external_disk_index-1]['mountpoint']
+    
+    download_album(
+        service, 
+        albums[album_index-1]['id'],
+        albums[album_index-1]['title'], 
+        disk_mount_point,
+        user_email)
 
 if __name__ == '__main__':
     main()
