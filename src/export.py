@@ -2,7 +2,7 @@
 import os
 import requests
 
-def download_album(service, photos_list, album_title, disk_mount_point: str, user_email):
+def download_album(photos_list, album_title, disk_mount_point: str, user_email):
     file_path = os.path.join(disk_mount_point, user_email, album_title)
     os.makedirs(file_path, exist_ok=True)
 

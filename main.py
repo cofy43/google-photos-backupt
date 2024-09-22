@@ -79,7 +79,6 @@ def main():
         disk_mount_point = external_disks[external_disk_index-1]['mountpoint']
     
     download_album(
-        service, 
         list_photos,
         albums[album_index-1]['title'], 
         disk_mount_point,
