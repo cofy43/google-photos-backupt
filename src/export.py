@@ -1,6 +1,7 @@
 # export.py
 import os
 import requests
+from tqdm import tqdm
 
 def download_album(photos_list, album_title, disk_mount_point: str, user_email):
     file_path = os.path.join(disk_mount_point, user_email, album_title)
@@ -8,11 +9,11 @@ def download_album(photos_list, album_title, disk_mount_point: str, user_email):
 
     total_photos = len(photos_list)
     exported_photos = 0
-    for photo in photos_list:
+    for photo in tqdm(photos_list, desc="Exportando fotos"):
         try:
             filename = photo['filename']
             photo_url = photo['baseUrl'] + '=d'  # URL para descargar a tamaño completo
-            print(f"Descargando {filename}...")
+            # print(f"Descargando {filename}...")
             img_data = requests.get(photo_url).content
             with open(os.path.join(file_path, filename), 'wb') as f:
                 f.write(img_data)

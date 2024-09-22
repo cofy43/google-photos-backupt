@@ -12,6 +12,7 @@ from units import get_disk_partitions
 from export import download_album
 
 from tabulate import tabulate
+from tqdm import tqdm
 
 def get_user_input(prompt: str, valid_options: list) -> int:
     while True:
@@ -46,7 +47,7 @@ def main():
         return
 
     albumns_headers = ["Id", "Name", "Items"]
-    albums_photos = [[x, get_photos_in_album(service, x['id'])] for x in albums]
+    albums_photos = [[x, get_photos_in_album(service, x['id'])] for x in tqdm(albums, desc="Procesando álbumes")]
     print("Albums finded:")
     albums_data = [[i, x[0]['title'], len(x[1])] for i, x in enumerate(albums_photos)]
     print(tabulate(albums_data, headers=albumns_headers, tablefmt="grid"))
