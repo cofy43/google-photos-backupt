@@ -20,3 +20,6 @@ venv/
 
 # User Tokens
 tokens/
+
+locales/en/LC_MESSAGES/*.mo
+locales/es/LC_MESSAGES/*.mo
