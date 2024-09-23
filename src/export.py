@@ -12,11 +12,17 @@ def download_album(photos_list, album_title, disk_mount_point: str, user_email):
     for photo in tqdm(photos_list, desc="Exportando fotos"):
         try:
             filename = photo['filename']
-            photo_url = photo['baseUrl'] + '=d'  # URL para descargar a tamaño completo
-            # print(f"Descargando {filename}...")
-            img_data = requests.get(photo_url).content
+            is_video = filename.lower().endswith('.mov')
+            photo_url = photo['baseUrl'] + '=dv' if is_video else photo['baseUrl'] + '=d'
+            img_data = requests.get(photo_url, stream=is_video)
+            img_data.raise_for_status()
+
             with open(os.path.join(file_path, filename), 'wb') as f:
-                f.write(img_data)
+                if is_video:
+                    for chunk in img_data.iter_content(chunk_size=8192):
+                        f.write(chunk)
+                else:
+                    f.write(img_data.content)
                 f.close()
             exported_photos += 1
         except Exception as e:
