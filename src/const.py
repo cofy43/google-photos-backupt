@@ -1,6 +1,19 @@
 # src/const.py
 from typing import Tuple
 
+TITLE = """
+ ▗▄▄▖ ▗▄▖  ▗▄▖  ▗▄▄▖▗▖   ▗▄▄▄▖    ▗▖    ▗▄▖  ▗▄▄▖ ▗▄▖ ▗▖   
+▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌   ▐▌       ▐▌   ▐▌ ▐▌▐▌   ▐▌ ▐▌▐▌   
+▐▌▝▜▌▐▌ ▐▌▐▌ ▐▌▐▌▝▜▌▐▌   ▐▛▀▀▘    ▐▌   ▐▌ ▐▌▐▌   ▐▛▀▜▌▐▌   
+▝▚▄▞▘▝▚▄▞▘▝▚▄▞▘▝▚▄▞▘▐▙▄▄▖▐▙▄▄▖    ▐▙▄▄▖▝▚▄▞▘▝▚▄▄▖▐▌ ▐▌▐▙▄▄▖                                                
+                                                           
+▗▄▄▖  ▗▄▖  ▗▄▄▖▗▖ ▗▖▗▖ ▗▖▗▄▄▖                              
+▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌▗▞▘▐▌ ▐▌▐▌ ▐▌                             
+▐▛▀▚▖▐▛▀▜▌▐▌   ▐▛▚▖ ▐▌ ▐▌▐▛▀▘                              
+▐▙▄▞▘▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▝▚▄▞▘▐▌                                
+                                                           
+"""
+
 ACCESS_DENIED_CODE = 403
 ACCESS_DENIED_MSG = "Acceso denegado o credenciales inválidas. Por favor, verifica tus credenciales e inténtalo de nuevo."
 
