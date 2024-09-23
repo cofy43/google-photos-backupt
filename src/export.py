@@ -3,13 +3,15 @@ import os
 import requests
 from tqdm import tqdm
 
+from const import EXPORTING_ALBUMS_CONTENT, EXPORTING_ALBUMS_CONTENT_ERROR
+
 def download_album(photos_list, album_title, disk_mount_point: str, user_email):
     file_path = os.path.join(disk_mount_point, user_email, album_title)
     os.makedirs(file_path, exist_ok=True)
 
     total_photos = len(photos_list)
     exported_photos = 0
-    for photo in tqdm(photos_list, desc="Exportando fotos"):
+    for photo in tqdm(photos_list, desc=EXPORTING_ALBUMS_CONTENT):
         try:
             filename = photo['filename']
             if os.path.exists(os.path.join(file_path, filename)):
@@ -28,7 +30,7 @@ def download_album(photos_list, album_title, disk_mount_point: str, user_email):
                 f.close()
             exported_photos += 1
         except Exception as e:
-            print(f"Error descargando foto: {e}")
+            print(f"{EXPORTING_ALBUMS_CONTENT_ERROR}: {e}")
     
     print(f"Descargadas {exported_photos} fotos en {file_path} de {total_photos}")
     return exported_photos == total_photos
