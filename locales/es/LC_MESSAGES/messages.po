@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+
+msgid "Access denied or invalid credentials. Please check your credentials and try again."
+msgstr "Acceso denegado o credenciales inválidas. Por favor, verifica tus credenciales e inténtalo de nuevo."
+
+msgid "Error during token update"
+msgstr "Error durante la actualización del token"
+
+msgid "Timeout during token update"
+msgstr "Tiempo de espera agotado durante la actualización del token"
+
+msgid "An unexpected error occurred during the token update"
+msgstr "Ocurrió un error inesperado durante la actualización del token"
+
+msgid "Access your Google Photos account"
+msgstr "Accede a tu cuenta de Google Photos"
+
+msgid "Enter the authorization code:"
+msgstr "Introduce el código de autorización:"
+
+msgid "Invalid input. Try again."
+msgstr "Entrada inválida. Inténtalo de nuevo."
+
+msgid "1) Export an album"
+msgstr "1) Exportar un álbum"
+
+msgid "2) Exit"
+msgstr "2) Salir"
+
+msgid "Enter the number of the option: "
+msgstr "Introduce el número de la opción: "
+
+msgid "Albums finded:"
+msgstr "Álbumes encontrados:"
+
+msgid "Enter the number of the album to export: "
+msgstr "Introduce el número del álbum a exportar: "
+
+msgid "No photos found in the album."
+msgstr "No se encontraron fotos en el álbum."
+
+msgid "Number of photos found in the album:"
+msgstr "Número de fotos encontradas en el álbum:"
+
+msgid "Do you want internal or external disk?"
+msgstr "¿Quieres disco interno o externo?"
+
+msgid "Enter 'internal' or 'external': "
+msgstr "Introduce 'interno' o 'externo': "
+
+msgid "No external disks found."
+msgstr "No se encontraron discos externos."
+
+msgid "Do you want search for external disk again?\n1) Yes\n2) No\n"
+msgstr "¿Quieres buscar discos externos de nuevo?\n1) Sí\n2) No\n"
+
+msgid "Internal disk selected. The album will be downloaded to the Documents folder."
+msgstr "Disco interno seleccionado. El álbum se descargará en la carpeta Documentos."
+
+msgid "External disk selected."
+msgstr "Disco externo seleccionado."
+
+msgid "Enter the number of the external disk: "
+msgstr "Introduce el número del disco externo: "
+
+msgid "Enter your Google email 📧: "
+msgstr "Introduce tu correo electrónico de Google 📧: "
+
+msgid "Authenticating..."
+msgstr "Autenticando..."
+
+msgid "Authentication complete."
+msgstr "Autenticación completa."
+
+msgid "Getting albums..."
+msgstr "Obteniendo álbumes..."
+
+msgid "No albums found."
+msgstr "No se encontraron álbumes."
+
+msgid "Processing albums"
+msgstr "Procesando álbumes"
+
+msgid "Exporting photos"
+msgstr "Exportando fotos"
+
+msgid "Error downloading photo"
+msgstr "Error descargando foto"
+
