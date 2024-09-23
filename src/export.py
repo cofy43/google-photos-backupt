@@ -12,6 +12,8 @@ def download_album(photos_list, album_title, disk_mount_point: str, user_email):
     for photo in tqdm(photos_list, desc="Exportando fotos"):
         try:
             filename = photo['filename']
+            if os.path.exists(os.path.join(file_path, filename)):
+                continue
             is_video = filename.lower().endswith('.mov')
             photo_url = photo['baseUrl'] + '=dv' if is_video else photo['baseUrl'] + '=d'
             img_data = requests.get(photo_url, stream=is_video)
