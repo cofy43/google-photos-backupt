@@ -13,21 +13,20 @@ TITLE = """
 ▐▙▄▞▘▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▝▚▄▞▘▐▌                                
                                                            
 """
-
 ACCESS_DENIED_CODE = 403
-ACCESS_DENIED_MSG = "Acceso denegado o credenciales inválidas. Por favor, verifica tus credenciales e inténtalo de nuevo."
+ACCESS_DENIED_MSG = "Access denied or invalid credentials. Please check your credentials and try again."
 
 TRANSPORT_ERROR_CODE = 501
-TRANSPORT_ERROR_MSG = "Error durante la actualización del token"
+TRANSPORT_ERROR_MSG = "Error during token update"
 
 TIMEOUT_ERROR_CODE = 504
-TIMEOUT_ERROR_MSG = "Tiempo de espera agotado durante la actualización del token"
+TIMEOUT_ERROR_MSG = "Timeout during token update"
 
 UNEXPECTED_ERROR_CODE = 500
-UNEXPECTED_ERROR_MSG = "Ocurrió un error inesperado durante la actualización del token"
+UNEXPECTED_ERROR_MSG = "An unexpected error occurred during the token update"
 
-AUTORIZATION_PROMPT_MESSAGE = 'Accede a tu cuenta de Google Photos'
-AUTORIZATION_CODE_MESSAGE = 'Introduce el código de autorización:'
+AUTHORIZATION_PROMPT_MESSAGE = 'Access your Google Photos account'
+AUTHORIZATION_CODE_MESSAGE = 'Enter the authorization code:'
 
 INVALID_INPUT_MSG = "Invalid input. Try again."
 
