@@ -44,7 +44,7 @@ NUMBER_OF_PHOTOS_MSG = "Number of photos found in the album:"
 
 INTERNAL_OR_EXTERNAL_QUESTION = "Do you want internal or external disk?"
 
-DISK_TYPE_PROMPT = "Enter 'internal' or 'external': "
+DISK_TYPE_PROMPT = "1) 'internal'\n2)'external':\n"
 
 NO_EXTERNAL_DISKS_MSG = "No external disks found."
 

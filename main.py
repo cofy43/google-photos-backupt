@@ -63,8 +63,8 @@ def export_albums(albums, user_email):
         disk_type = ""
         if len(external_disks) > 0:
             print(_(INTERNAL_OR_EXTERNAL_QUESTION))
-            while disk_type not in ['internal', 'external']:
-                disk_type = input(_(DISK_TYPE_PROMPT))
+            disk_type = get_user_input(_(DISK_TYPE_PROMPT), [1,2]) == 1 and 'internal' or 'external'
+            external_disk_search = False
         else:
             print(_(NO_EXTERNAL_DISKS_MSG))
             external_disk_search = get_user_input(_(RESEARCH_EXTERNAL_DISK_AGAIN), [1,2]) == 1

@@ -48,8 +48,8 @@ msgstr "Número de fotos encontradas en el álbum:"
 msgid "Do you want internal or external disk?"
 msgstr "¿Quieres disco interno o externo?"
 
-msgid "Enter 'internal' or 'external': "
-msgstr "Introduce 'interno' o 'externo': "
+msgid "1) 'internal'\n 2)'external':\n"
+msgstr "1)'interno\n 2)'externo':\n"
 
 msgid "No external disks found."
 msgstr "No se encontraron discos externos."
