@@ -17,13 +17,8 @@ def get_disk_partitions() -> Tuple[List[dict], List[dict]]:
     external_disks = []
 
     # List of mount points to exclude
-    exclude_mountpoints = [
-        '/System', '/private', '/dev', '/Volumes/Preboot', '/Volumes/Recovery', '/Volumes/VM'
-    ]
 
     for partition in partitions:
-        if any(partition.mountpoint.startswith(exclude) for exclude in exclude_mountpoints):
-            continue
 
         usage = psutil.disk_usage(partition.mountpoint)
         disk_info = {
