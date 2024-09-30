@@ -47,7 +47,7 @@ def export_albums(albums, user_email):
     albums_data = [[i+1, x[0]['title'], len(x[1])] for i, x in enumerate(albums)]
     print(tabulate(albums_data, headers=["Id", "Name", "Items"], tablefmt="grid"))
 
-    album_index = get_user_input(_(GET_ALBUM_INDEX_PROMPT), list(range(1, len(albums))))
+    album_index = get_user_input(_(GET_ALBUM_INDEX_PROMPT), list(range(1, len(albums)+1)))
     
     list_photos = albums[album_index-1][1]
     if not list_photos:
