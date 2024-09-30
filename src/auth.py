@@ -53,8 +53,8 @@ def authenticate(user_email: str = None) -> Tuple[build, int]:
             try:
                 creds = flow.run_local_server(
                     port=8080, 
-                    authorization_prompt_message=const.AUTORIZATION_PROMPT_MESSAGE, 
-                    authorization_code_message=const.AUTORIZATION_CODE_MESSAGE)
+                    authorization_prompt_message=const.AUTHORIZATION_PROMPT_MESSAGE, 
+                    authorization_code_message=const.AUTHORIZATION_CODE_MESSAGE)
             except Exception as e:
                 return handle_exception(e)
 
